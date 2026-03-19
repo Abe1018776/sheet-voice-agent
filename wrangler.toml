@@ -1,0 +1,24 @@
+name = "sheet-voice-agent"
+main = "src/index.ts"
+compatibility_date = "2026-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "public"
+binding = "ASSETS"
+run_worker_first = true
+
+[durable_objects]
+bindings = [
+  { name = "SESSION", class_name = "AgentSession" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["AgentSession"]
+
+[[r2_buckets]]
+binding = "SHEETS"
+bucket_name = "sheet-voice-agent"
+
+# Set via: wrangler secret put OPENAI_API_KEY
