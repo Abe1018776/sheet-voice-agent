@@ -15,7 +15,7 @@ bindings = [
 
 [[migrations]]
 tag = "v1"
-new_classes = ["AgentSession"]
+new_sqlite_classes = ["AgentSession"]
 
 [[r2_buckets]]
 binding = "SHEETS"
